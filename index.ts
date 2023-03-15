@@ -1,1 +1,1 @@
-let id = 6
+let id: number = 5
