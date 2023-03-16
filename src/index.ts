@@ -29,3 +29,20 @@ pId = 22
 pId = 'Gouache'
 
 // Enum
+enum Direction1 {
+  Up = 1,
+  Down,
+  Left,
+  Right,
+}
+
+enum Direction2 {
+  Up = 'U',
+  Down = 'Down',
+  Left = 'Left',
+  Right = 'Right',
+}
+
+// console.log(Direction2.Left)
+
+// Objects
