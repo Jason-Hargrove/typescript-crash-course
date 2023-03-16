@@ -7,3 +7,25 @@ let age: number
 
 x = true
 age = 47
+
+let ids: number[] = [1, 2, 3, 4, 5]
+let arr: any[] = [1, true, 'Hello']
+
+// Tupel
+let person: [number, string, boolean] = [2, 'Hello', true]
+// Tupel Array
+let employee: [number, string][]
+
+employee = [
+  [1, 'Richard'],
+  [2, 'Jaosn'],
+  [3, 'Hargrove'],
+]
+
+// Union
+let pId: string | number
+
+pId = 22
+pId = 'Gouache'
+
+// Enum
