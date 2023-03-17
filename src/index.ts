@@ -1,3 +1,5 @@
+import { AssertionError } from 'assert'
+
 // Basic Types
 let id: number = 5
 let company: string = 'Jason Hargrove'
@@ -37,7 +39,7 @@ enum Direction1 {
 }
 
 enum Direction2 {
-  Up = 'U',
+  Up = 'Up',
   Down = 'Down',
   Left = 'Left',
   Right = 'Right',
@@ -46,3 +48,30 @@ enum Direction2 {
 // console.log(Direction2.Left)
 
 // Objects
+
+type User = {
+  id: number
+  name: string
+}
+
+const user: User = {
+  id: 1,
+  name: 'John',
+}
+
+// Type Assertion
+let cid: any = 1
+// let customerId = <number>cid
+let customerId = cid as number
+
+// Function
+const adNum = (x: number, y: number): number => {
+  return x + y
+}
+// console.log(adNum(1, 2))
+
+// Void
+function log(message: string | number): void {
+  console.log(message)
+}
+// console.log(log(true));

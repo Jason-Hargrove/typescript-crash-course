@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // Basic Types
 let id = 5;
 let company = 'Jason Hargrove';
@@ -32,10 +33,26 @@ var Direction1;
 })(Direction1 || (Direction1 = {}));
 var Direction2;
 (function (Direction2) {
-    Direction2["Up"] = "U";
+    Direction2["Up"] = "Up";
     Direction2["Down"] = "Down";
     Direction2["Left"] = "Left";
     Direction2["Right"] = "Right";
 })(Direction2 || (Direction2 = {}));
-// console.log(Direction2.Left)
-// Objects
+const user = {
+    id: 1,
+    name: 'John',
+};
+// Type Assertion
+let cid = 1;
+// let customerId = <number>cid
+let customerId = cid;
+// Function
+const adNum = (x, y) => {
+    return x + y;
+};
+// console.log(adNum(1, 2))
+// Void
+function log(message) {
+    console.log(message);
+}
+// console.log(log(true));
