@@ -104,3 +104,62 @@ interface MathFunc {
 
 const add: MathFunc = (x: number, y: number): number => x + y
 const subtract: MathFunc = (x: number, y: number): number => x - y
+
+// Classes
+// Access modifiers: public, private, protected
+// public by default
+// private is only accessible within the class 'Person'
+// protected is only accessible within the class 'Person' and it's subclasses / any classes extended form 'Person' calss.
+
+interface PersonInterface {
+  id: number
+  name: string
+  register(): string
+}
+
+class Person implements PersonInterface {
+  id: number
+  name: string
+
+  constructor(id: number, name: string) {
+    this.id = id
+    this.name = name
+  }
+
+  register() {
+    return `${this.name} is now registered`
+  }
+}
+
+const brad = new Person(321, 'brad')
+const mike = new Person(543, 'mike')
+// Without access modifier, you can change the id.
+// brad.id = 5
+// console.log(brad.id)
+
+// console.log(brad.register())
+
+// Subclasses
+class Employee extends Person {
+  position: string
+
+  constructor(id: number, name: string, position: string) {
+    super(id, name)
+    this.position = position
+  }
+}
+
+const emp = new Employee(1, 'The Dude', 'Dev')
+
+// Generics - used to build resuable components
+function getArray<T>(items: T[]): T[] {
+  return new Array().concat(items)
+}
+
+let numArray = getArray<number>([1, 2, 3, 4])
+let strArray = getArray<string>(['Brad', 'John', 'Jill'])
+
+numArray.push(50)
+strArray.push('Ash')
+console.log(numArray)
+console.log(strArray)

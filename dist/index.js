@@ -62,3 +62,36 @@ const user1 = {
 const p1 = 1;
 const add = (x, y) => x + y;
 const subtract = (x, y) => x - y;
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+const brad = new Person(321, 'brad');
+const mike = new Person(543, 'mike');
+// Without access modifier, you can change the id.
+// brad.id = 5
+// console.log(brad.id)
+// console.log(brad.register())
+// Subclasses
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(1, 'The Dude', 'Dev');
+// Generics - used to build resuable components
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4]);
+let strArray = getArray(['Brad', 'John', 'Jill']);
+numArray.push(50);
+strArray.push('Ash');
+console.log(numArray);
+console.log(strArray);
