@@ -75,3 +75,32 @@ function log(message: string | number): void {
   console.log(message)
 }
 // console.log(log(true));
+
+// Interfaces
+interface UserInterface {
+  readonly id: number
+  name: string
+  age?: number
+}
+
+const user1: UserInterface = {
+  id: 1,
+  name: 'Jason',
+}
+
+// Since it's 'readonly' you'll get an error
+// user1.id = 5
+
+// When using type, you can use it with primatives and unions
+type Point = number | string
+const p1: Point = 1
+// You can't use an interface in this way
+// interface Point2 = number | string
+// const p2: Point2 = 1
+
+interface MathFunc {
+  (x: number, y: number): number
+}
+
+const add: MathFunc = (x: number, y: number): number => x + y
+const subtract: MathFunc = (x: number, y: number): number => x - y

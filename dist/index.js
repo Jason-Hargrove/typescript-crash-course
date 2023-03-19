@@ -55,4 +55,10 @@ const adNum = (x, y) => {
 function log(message) {
     console.log(message);
 }
-// console.log(log(true));
+const user1 = {
+    id: 1,
+    name: 'Jason',
+};
+const p1 = 1;
+const add = (x, y) => x + y;
+const subtract = (x, y) => x - y;
